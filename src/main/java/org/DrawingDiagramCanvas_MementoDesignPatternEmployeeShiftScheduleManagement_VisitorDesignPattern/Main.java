@@ -2,8 +2,6 @@ package org.DrawingDiagramCanvas_MementoDesignPatternEmployeeShiftScheduleManage
 
 import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -22,7 +20,8 @@ public class Main {
                 shiftScheduleManagement -> {
                     shiftScheduleManagement.generateReport();
                     shiftScheduleManagement.calculateOverTime();
-                    shiftScheduleManagement.handleLeavingRequests();
+                    shiftScheduleManagement.acceptVisitor(new ManageLeaveRequestVisitor());
+                    shiftScheduleManagement.acceptVisitor(new CalculateBonusVisitor());
                 }
         );
 

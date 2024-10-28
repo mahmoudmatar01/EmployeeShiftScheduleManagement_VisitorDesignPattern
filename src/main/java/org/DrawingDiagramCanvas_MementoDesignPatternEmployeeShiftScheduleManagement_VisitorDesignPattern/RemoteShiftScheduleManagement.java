@@ -13,7 +13,8 @@ public class RemoteShiftScheduleManagement implements ShiftScheduleManagement{
     }
 
     @Override
-    public void handleLeavingRequests() {
-        System.out.println("Handle leaving requests for remote shift schedule");
+    public void acceptVisitor(ShiftScheduleManagementVisitor shiftScheduleManagementVisitor) {
+        shiftScheduleManagementVisitor.visit(this);
     }
+
 }

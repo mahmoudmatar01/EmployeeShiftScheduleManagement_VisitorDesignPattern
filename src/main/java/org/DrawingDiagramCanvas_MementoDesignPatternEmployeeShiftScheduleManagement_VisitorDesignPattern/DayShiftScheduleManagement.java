@@ -13,7 +13,8 @@ public class DayShiftScheduleManagement implements ShiftScheduleManagement{
     }
 
     @Override
-    public void handleLeavingRequests() {
-        System.out.println("Handle leaving requests for day shift schedule");
+    public void acceptVisitor(ShiftScheduleManagementVisitor shiftScheduleManagementVisitor) {
+        shiftScheduleManagementVisitor.visit(this);
     }
+
 }
